@@ -1,0 +1,28 @@
+body {
+	position: relative;
+	overflow-x: hidden;
+}
+
+.content-overlay {
+	margin-right: auto;
+	margin-left: auto;
+	letter-spacing: 0.08em;
+	background-color: $br-white;
+	mix-blend-mode: screen;
+	min-height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.color-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	background-color: blue;
+	height: 100vh;
+}

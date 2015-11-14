@@ -1,0 +1,33 @@
+.header-name {
+  	width: 100%;
+  	text-align: center;
+  	font-size: 2.15em
+}
+
+.header-sub {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	margin-top: 1em;
+}
+
+.header-pair {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 0em 1em 0em 1em;
+
+  h4 {
+	font-size: 1.4em;
+	display: inline-block;
+	font-weight: 700;
+  }
+
+  svg {
+	width: 0.98em;
+	margin-right: 0.5em;
+  }
+
+}
