@@ -4,6 +4,7 @@ body {
 }
 
 .content-overlay {
+	position: absolute;
 	margin-right: auto;
 	margin-left: auto;
 	letter-spacing: 0.08em;
@@ -16,13 +17,18 @@ body {
 	align-items: center;
 	flex-direction: column;
 	overflow: hidden;
+	//pointer-events: none;
 }
 
-.color-overlay {
+.content-overlay > div {
+	//pointer-events: all;	
+}
+
+
+.pt-container {
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100vw;
-	background-color: blue;
 	height: 100vh;
 }
