@@ -31,7 +31,7 @@ class Main {
 		  clickAdd(event);
 		});
 		window.addEventListener("touchmove", function(event){
-		  event.preventDefault;
+		  event.preventDefault();
 		});
 
 		var clipboard = new Clipboard('#footer-email');
