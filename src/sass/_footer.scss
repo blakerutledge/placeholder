@@ -5,26 +5,47 @@
 	padding-bottom: 1em;
 	color: $br-black;
 	background-color: $br-white;
+	font-size: 1em;
 }
 
 .footer-ul {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	flex-wrap: nowrap;
-	justify-content: center;
-	align-items: baseline;
+	justify-content: flex-start;
+	align-items: center;
 	list-style-type:  none;
 	padding-left: 0;
 
+	@media screen and (min-width: $tablet) {
+		flex-direction: row;
+		align-items: baseline;
+		justify-content: center;
+	}
+
 	li {
 		text-decoration: none;
+		cursor: pointer;
 
 		a {
-			margin-right: .5em;
-			padding-right: .5em;
-			padding-top: .05em;
-			padding-bottom: .1em;
+			display: block;
+			margin-bottom: 0.6em;
+			padding: 0.8em 1.6em;
+		    width: 20em;
+    		text-align: center;
+
+			border: solid $br-black 1px;
+			border-radius: 0.3em;
 			transition: all .2s linear;
+			
+			@media screen and (min-width: $tablet) {
+				width: initial;
+				margin-right: .5em;
+				padding-right: .5em;
+				padding-top: .05em;
+				padding-bottom: .1em;
+				border: none;
+			}
 		}
 	}
 
@@ -34,16 +55,32 @@
 		padding-top: .05em;
 		padding-bottom: .1em;
 		transition: all .2s linear;
+		display: none;
+		@media screen and (min-width: $tablet) {
+			display: initial;
+		}
 	}
 
 	.spacer::after {
-		content: "|";
+		@media screen and (min-width: $tablet) {
+			content: "|";
+		}
 	}
 	
 	li:last-child {
 		border-right: none;
 		margin-right: 0;
 		padding-right: 0;
+		position: relative;
+		cursor: initial;
+
+		@media screen and (min-width: $tablet){
+			cursor: pointer;
+		}
+
+		a {
+			border: none;
+		}
 	}
 }
 
@@ -54,5 +91,50 @@
 		
 	a:hover {
 		opacity: 1;
+	}
+}
+
+.copied-alert {
+	font-size: 1.05em;
+	position: absolute;
+	color: $br-white;
+	background-color: $br-black;
+	border-radius: 0.2em;
+	padding: 0.3em 0em;
+	text-align: center;
+	width: 8em;
+	left: 50%;
+	margin-left: -4em;
+	top: 3.6em;
+	display: none;
+
+	@media screen and (min-width: $tablet) {
+		top: initial;
+		bottom: 3.3em;
+		font-size: 0.8em;
+	}
+}
+.copied-alert-triangle {
+	font-size: 1.05em;
+	position: absolute;
+	background-color: $br-black;
+	width: .7em;
+	height: .7em;
+	left: 50%;
+	margin-left: -0.5em;
+	transform: rotate(45deg);
+	top: 3.3em;
+	display: none;
+
+	@media screen and (min-width: $tablet) {
+		top: initial;
+		bottom: 3.1em;
+		font-size: 0.8em;
+	}
+}
+
+.copied-alert-showing {
+	@media screen and (min-width: $tablet) {
+		display: block;
 	}
 }
