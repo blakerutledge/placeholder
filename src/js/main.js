@@ -25,9 +25,9 @@ class Main {
 function buildPt() {
 
 	//// 1. Define Space and Form
-	var colors = ["#ff2d5d", "#42dc8e", "#2e43eb", "#ffe359"]
+	var colors = ["#ff7b21", "#3dc895", "#ffd138", "#916e79"]
 
-	space = new CanvasSpace("demo", "#ddd" ).display();
+	space = new CanvasSpace("demo", "#fff" ).display();
 
 	form = new Form( space );
 	form.stroke( false );
@@ -39,9 +39,9 @@ function buildPt() {
 	function Shape() {
 	  Vector.apply( this, arguments ); // call Vector's constructor
 	  this.age = 0
-	  this.maxAge = 250
+	  this.maxAge = 200
 	  this.size =  0
-	  this.color = colors["a"+Math.ceil(Math.random()*4)]
+	  this.color = "#00FFFF";
 	}
 	Util.extend( Shape, Vector ); // extends Vector class
 
@@ -50,10 +50,11 @@ function buildPt() {
 	  if (this.age++ > this.maxAge) space.remove(this)
 
 	  // draw shapes
-	  form.fill( Util.toRGBColor( this.color, true ) )
-	  var largerSize = space.size.x > space.size.x ? space.size.x : space.size.y
 	  var progress = this.age / this.maxAge
-	  this.size = Math.pow( progress, 1/3 ) * largerSize
+	  var opacity = progress > 0.7 ? 1 - ( progress - 0.7 ) / 0.2  : 1
+	  form.fill( Util.toRGBColor( this.color, true, opacity ) )
+	  var largerSize = space.size.x > space.size.x ? space.size.x : space.size.y
+	  this.size = Math.pow( progress, 1/2 ) * largerSize
 	  form.point( this, this.size, true )
 
 	}
