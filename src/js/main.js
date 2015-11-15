@@ -30,6 +30,9 @@ class Main {
 		window.addEventListener("mousedown", function(event){
 		  clickAdd(event);
 		});
+		window.addEventListener("touchmove", function(event){
+		  event.preventDefault;
+		});
 
 		var clipboard = new Clipboard('#footer-email');
 		
